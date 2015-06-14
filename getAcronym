@@ -1,0 +1,33 @@
+package main
+
+import (
+
+	"strings"
+)
+
+
+/***********Returns the Accronym of a sentence***************
+************************************************************/
+
+func getAcronym(x string) string  {
+	
+var returnstring  []string =make([]string, len(x), 100000)
+		
+var tempstring []string
+var j int =0
+	
+	tempstring = strings.Split(strings.ToUpper(x)," ")
+	
+	
+	for i:= 0; i < len(tempstring); i++ {
+	 
+		if strings.EqualFold(tempstring[i],""){
+			continue 
+		  }
+		returnstring[j]=string(tempstring[i][0])		
+        j=j+1
+       }
+  return strings.Join(returnstring,"")
+}
+
+
